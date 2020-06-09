@@ -40,5 +40,30 @@ namespace EventPrac
         {
             label1.Text = "X : " + e.X + " / Y : " + e.Y;
         }
+
+        private int elapsedTime = 0;
+        
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            timer1.Start();
+        }
+
+        private void btn_stop_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            elapsedTime = 0;
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            elapsedTime++;
+            label2.Text = "" + elapsedTime; // Time이 int라 스트링 붙여줘야함
+        }
     }
 }
